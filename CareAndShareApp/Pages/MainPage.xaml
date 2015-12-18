@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="CareAndShareApp.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CareAndShareApp.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource FocusVisualBlackStrokeThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Care And Share" Foreground="Wheat"  FontWeight="Bold" FontSize="30" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+        <Rectangle Height="3" Fill="Wheat" Grid.ColumnSpan="3" VerticalAlignment="Bottom"/>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <!--<Button Content="My Pending Submissions" 
+                    HorizontalAlignment="Stretch"
+                    Background="Wheat"                 
+                    Height="70"                    
+                    Foreground="black"
+                    FontSize="15"
+                    Margin="20"
+                    Template="{StaticResource ElipseButtonTemplate}"/>-->
+            <Button Name="btn1" Grid.Row="2" Style="{StaticResource WhiteToWheatButtonStyle}" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/assets/big-button.png" HorizontalAlignment="Left"></Image>
+                    <TextBlock Margin="5,0,0,0" Foreground="white" HorizontalAlignment="Left" VerticalAlignment="Center">Submit a Problem</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="2" Style="{StaticResource WhiteToWheatButtonStyle}">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Image Source="/assets/web_hi_res_512.png" HorizontalAlignment="Left"></Image>
+                <TextBlock Margin="5,0,0,0" Foreground="white" HorizontalAlignment="Left" VerticalAlignment="Center">My Submissions</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="2" Style="{StaticResource WhiteToWheatButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/assets/tender.png" HorizontalAlignment="Left"/>
+                    <TextBlock Margin="5,0,0,0" Foreground="white" HorizontalAlignment="Stretch" VerticalAlignment="Center">My Pending Submissions</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

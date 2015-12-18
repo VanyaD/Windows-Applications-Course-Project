@@ -1,0 +1,41 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="CareAndShareApp.Resources">
+
+    <LinearGradientBrush x:Key="whiteToWheatBrush" 
+                             StartPoint="1,1"
+                             EndPoint="0,0">
+        <GradientStop Color="White"  Offset="0"/>
+        <GradientStop Color="Wheat"  Offset="0.7"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="WhiteToWheatButtonStyle" TargetType="Button">
+        <Setter Property="Background" 
+                    Value="{StaticResource whiteToWheatBrush}"/>
+        <Setter Property="HorizontalAlignment" 
+                    Value="Stretch"/>
+        <Setter Property="Margin" 
+                    Value="10"/>
+        <Setter Property="Height" 
+                    Value="80"/>
+        <Setter Property="FontSize" 
+                    Value="20"/>
+        <Setter Property="FontWeight" 
+                    Value="Black"/>
+        <Setter Property="HorizontalContentAlignment" 
+                    Value="Left"/>
+    </Style>
+
+    <ControlTemplate x:Key="ElipseButtonTemplate"  TargetType="Button">
+        <Grid>
+            <Ellipse Width="{TemplateBinding Width}"
+                                     Height="{TemplateBinding Height}"
+                                     Fill="{TemplateBinding Background}"/>
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"/>
+            <Border x:Name="ButtonBorder"
+                    CornerRadius="5"/>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>
