@@ -9,13 +9,19 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-
         <Style TargetType="TextBlock" x:Key="TextBlock">
             <Setter Property="Foreground" Value="Wheat"></Setter>
             <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
         </Style>
     </Page.Resources>
+
+    <Page.TopAppBar >
+        <CommandBar ClosedDisplayMode="Minimal">
+            <AppBarToggleButton Icon="Home" Label="Home" Click="AppBarHomeButton_Click"/>
+            <AppBarToggleButton Icon="Help" Label="About"/>
+        </CommandBar>
+    </Page.TopAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="Black">

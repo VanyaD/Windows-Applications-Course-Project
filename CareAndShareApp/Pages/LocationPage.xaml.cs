@@ -90,5 +90,10 @@ namespace CareAndShareApp.Pages
         {
             this.Frame.Navigate(typeof(CameraPage), viewModel);
         }
+
+        private void AppBarHomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }
