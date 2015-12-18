@@ -59,6 +59,12 @@ namespace CareAndShareApp.Pages
             await bitmapSource.SetBitmapAsync(softwareBitmapBGR8);
 
             imageControl.Source = bitmapSource;
+            this.GoToThirdPageButton.Visibility = Visibility.Visible;
+        }
+
+        private void GoToProblemDescriptionPageClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ProblemDescriptionPage), viewModel);
         }
 
         private void AppBarHomeButton_Click(object sender, RoutedEventArgs e)

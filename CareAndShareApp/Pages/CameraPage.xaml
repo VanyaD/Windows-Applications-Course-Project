@@ -35,6 +35,16 @@
                         Content="Shoot"                                         
                         Style="{StaticResource ActionButton}">
                 </Button>
+
+                <Button x:Name="GoToThirdPageButton"                        
+                        Grid.Column="2"
+                        Style="{StaticResource GoToNextPage}"                       
+                        Click="GoToProblemDescriptionPageClick">
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Assets/arrow-next.png" Stretch="Fill">
+                        </Image>
+                    </StackPanel>
+                </Button>
             </Grid>
             <Image Grid.Row="3" x:Name="imageControl" Width="200" Height="200"/>
         </Grid>
