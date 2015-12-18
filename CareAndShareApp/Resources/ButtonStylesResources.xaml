@@ -46,7 +46,7 @@
 
     <ControlTemplate x:Key="ElipseButtonTemplate"  TargetType="Button">
         <Grid>
-            <Ellipse Width="{TemplateBinding Width}"
+            <Ellipse Width="{TemplateBinding Height}"
                                      Height="{TemplateBinding Height}"
                                      Fill="{TemplateBinding Background}"/>
             <ContentPresenter HorizontalAlignment="Center"

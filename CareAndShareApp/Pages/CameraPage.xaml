@@ -13,7 +13,7 @@
             <AppBarToggleButton Icon="Help" Label="About"/>
         </CommandBar>
     </Page.TopAppBar>
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="Black">
             <Grid.RowDefinitions>
@@ -35,18 +35,18 @@
                         Content="Shoot"                                         
                         Style="{StaticResource ActionButton}">
                 </Button>
-
-                <Button x:Name="GoToThirdPageButton"                        
+                <Button x:Name="GoToProblemDescriptionPage"                        
                         Grid.Column="2"
-                        Style="{StaticResource GoToNextPage}"                       
-                        Click="GoToProblemDescriptionPageClick">
+                        Click="GoToProblemDescriptionPageClick"
+                        Style="{StaticResource GoToNextPage}"
+                        Template="{StaticResource ElipseButtonTemplate}">
                     <StackPanel Orientation="Horizontal">
                         <Image  Source="/Assets/arrow-next.png" Stretch="Fill">
                         </Image>
                     </StackPanel>
                 </Button>
             </Grid>
-            <Image Grid.Row="3" x:Name="imageControl" Width="200" Height="200"/>
+            <Image Grid.Row="3" x:Name="imageControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </Grid>
     </Grid>
 </Page>

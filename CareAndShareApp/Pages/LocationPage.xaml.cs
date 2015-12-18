@@ -32,6 +32,7 @@ namespace CareAndShareApp.Pages
 
         private async void GetLocationButtonClick(object sender, RoutedEventArgs e)
         {
+            this.LocationProgressBar.Visibility = Visibility.Visible;
             var position = await LocationManager.GetPosition();
             //this.tbLatitude.Text = position.Coordinate.Latitude.ToString();
             //this.tbLongitude.Text = position.Coordinate.Longitude.ToString();
@@ -54,7 +55,7 @@ namespace CareAndShareApp.Pages
             var twn = result.Locations[0].Address.Town;
             var nbr = result.Locations[0].Address.District;
             var adr = result.Locations[0].Address.FormattedAddress;
-
+            this.LocationProgressBar.Visibility = Visibility.Collapsed;
             if (result.Status == MapLocationFinderStatus.Success)
             {
                 this.tbCountry.Text = "Country = " +

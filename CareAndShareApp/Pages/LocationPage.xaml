@@ -9,10 +9,11 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <Style TargetType="TextBlock" x:Key="TextBlock">
+        <Style TargetType="TextBlock" x:Key="LocationInformationTextBlock">
             <Setter Property="Foreground" Value="Wheat"></Setter>
             <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
         </Style>
     </Page.Resources>
 
@@ -43,13 +44,12 @@
                     Click="GetLocationButtonClick"
                     Content="Where Am I?"
                     FontWeight="Bold"
-                    
                     Style="{StaticResource ActionButton}"/>
-                
                 <Button x:Name="GoToSecondPageButton"                        
                         Grid.Column="2"
-                        Style="{StaticResource GoToNextPage}"                       
-                        Click="GoToCameraPageClick">
+                        Click="GoToCameraPageClick"
+                        Style="{StaticResource GoToNextPage}"
+                        Template="{StaticResource ElipseButtonTemplate}">
                     <StackPanel Orientation="Horizontal">
                         <Image  Source="/Assets/arrow-next.png" Stretch="Fill">
                         </Image>
@@ -58,22 +58,22 @@
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.5*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.7*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="0.5*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Name="tbCountry" Style="{StaticResource TextBlock}" />
-                <TextBlock Grid.Row="0" Grid.Column="1" Name="tbTown" Style="{StaticResource TextBlock}" />
-                <TextBlock Grid.Row="1" Grid.Column="0" Name="tbNeighborhood" Style="{StaticResource TextBlock}"></TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="1" Name="tbAddress" Style="{StaticResource TextBlock}"></TextBlock>
+                <ProgressBar IsIndeterminate="True" x:Name="LocationProgressBar" Visibility="Collapsed" Foreground="Wheat" Grid.Row="0" Grid.ColumnSpan="2"></ProgressBar>
+                <TextBlock Grid.Row="0" Grid.Column="0" Name="tbCountry" Style="{StaticResource LocationInformationTextBlock}" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Name="tbTown" Style="{StaticResource LocationInformationTextBlock}" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Name="tbNeighborhood" Style="{StaticResource LocationInformationTextBlock}"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Name="tbAddress" Style="{StaticResource LocationInformationTextBlock}"></TextBlock>
             </Grid>
-            <Maps:MapControl Grid.Row="3" VerticalAlignment="Stretch"
-            x:Name="MapControlLocator"
-            MapServiceToken="token"
-            Margin="0,0,0,0">
+
+            <Maps:MapControl Grid.Row="3"
+             x:Name="MapControlLocator">
             </Maps:MapControl>
         </Grid>
     </Grid>

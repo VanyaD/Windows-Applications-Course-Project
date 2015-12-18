@@ -1,26 +1,19 @@
-﻿using CareAndShareApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Imaging;
-using Windows.Media.Capture;
-using Windows.Storage;
-using Windows.Storage.Streams;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Xaml.Navigation;
-
-namespace CareAndShareApp.Pages
+﻿namespace CareAndShareApp.Pages
 {
+    using CareAndShareApp.ViewModels;
+    using System;
+    using System.IO;
+    using Windows.ApplicationModel.DataTransfer;
+    using Windows.Graphics.Imaging;
+    using Windows.Media.Capture;
+    using Windows.Storage;
+    using Windows.Storage.Pickers;
+    using Windows.Storage.Streams;
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
+    using Windows.UI.Xaml.Media.Imaging;
+    using Windows.UI.Xaml.Navigation;
+
     public sealed partial class CameraPage : Page
     {
         LocatorViewModel viewModel;
@@ -39,7 +32,7 @@ namespace CareAndShareApp.Pages
         {
             CameraCaptureUI captureUI = new CameraCaptureUI();
             captureUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Jpeg;
-            captureUI.PhotoSettings.CroppedSizeInPixels = new Size(300, 300);
+            //captureUI.PhotoSettings.CroppedSizeInPixels = new Size(300, 300);
 
             StorageFile photo = await captureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
 
@@ -59,8 +52,9 @@ namespace CareAndShareApp.Pages
             await bitmapSource.SetBitmapAsync(softwareBitmapBGR8);
 
             imageControl.Source = bitmapSource;
-            this.GoToThirdPageButton.Visibility = Visibility.Visible;
+            this.GoToProblemDescriptionPage.Visibility = Visibility.Visible;
         }
+        ////
 
         private void GoToProblemDescriptionPageClick(object sender, RoutedEventArgs e)
         {
