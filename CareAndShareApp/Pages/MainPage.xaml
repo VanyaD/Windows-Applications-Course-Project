@@ -29,7 +29,7 @@
                     FontSize="15"
                     Margin="20"
                     Template="{StaticResource ElipseButtonTemplate}"/>-->
-            <Button Name="btn1" Grid.Row="2" Style="{StaticResource WhiteToWheatButtonStyle}" >
+            <Button Name="btn1" Click="SubmitProblemClick" Grid.Row="2" Style="{StaticResource WhiteToWheatButtonStyle}" >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <Image Source="/assets/big-button.png" HorizontalAlignment="Left"></Image>
                     <TextBlock Margin="5,0,0,0" Foreground="white" HorizontalAlignment="Left" VerticalAlignment="Center">Submit a Problem</TextBlock>
