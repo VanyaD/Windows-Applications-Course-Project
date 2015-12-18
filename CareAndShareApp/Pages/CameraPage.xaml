@@ -16,7 +16,7 @@
                 <RowDefinition Height="0.1*"/>
                 <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Catch the problem..." FontSize="25" Foreground="Wheat" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="0" Text="Capture the problem" FontSize="25" Foreground="Wheat" HorizontalAlignment="Center"></TextBlock>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.3*"/>
@@ -27,10 +27,7 @@
                         Grid.Column="1"
                         Click="Button_Click"
                         Content="Shoot"                                         
-                        FontWeight="Bold"
-                        FontSize="20"                   
-                        Background="Wheat"
-                        Height="80">
+                        Style="{StaticResource ActionButton}">
                 </Button>
             </Grid>
             <Image Grid.Row="3" x:Name="imageControl" Width="200" Height="200"/>

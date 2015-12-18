@@ -33,8 +33,8 @@ namespace CareAndShareApp.Pages
         private async void GetLocationButtonClick(object sender, RoutedEventArgs e)
         {
             var position = await LocationManager.GetPosition();
-            this.tbLatitude.Text = position.Coordinate.Latitude.ToString();
-            this.tbLongitude.Text = position.Coordinate.Longitude.ToString();
+            //this.tbLatitude.Text = position.Coordinate.Latitude.ToString();
+            //this.tbLongitude.Text = position.Coordinate.Longitude.ToString();
             ReverseGeocode(position.Coordinate.Latitude, position.Coordinate.Longitude);
         }
 
@@ -49,7 +49,6 @@ namespace CareAndShareApp.Pages
             // Reverse geocode the specified geographic location.
             MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
 
-            // If the query returns results, display the name of the town
             // contained in the address of the first result.
             var cnt = result.Locations[0].Address.Country;
             var twn = result.Locations[0].Address.Town;
@@ -81,12 +80,13 @@ namespace CareAndShareApp.Pages
                 Latitude = latitude,
                 Longitude = longitude
             });
+
             MapControlLocator.ZoomLevel = 18;
             MapControlLocator.LandmarksVisible = true;
             this.GoToSecondPageButton.Visibility = Visibility.Visible;
         }
 
-        private void GoToSecondPageButton_Click(object sender, RoutedEventArgs e)
+        private void GoToCameraPageClick(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CameraPage), viewModel);
         }

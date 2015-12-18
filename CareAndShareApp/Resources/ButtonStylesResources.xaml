@@ -10,6 +10,23 @@
         <GradientStop Color="Wheat"  Offset="0.7"/>
     </LinearGradientBrush>
 
+    <Style x:Key="GoToNextPage" TargetType="Button">
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Height" Value="100"></Setter>
+        <Setter Property="Background" Value="YellowGreen"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Visibility" Value="Collapsed"></Setter>
+    </Style>
+
+    <Style x:Key="ActionButton" TargetType="Button" >
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="{StaticResource whiteToWheatBrush}"></Setter>
+    </Style>
+
     <Style x:Key="WhiteToWheatButtonStyle" TargetType="Button">
         <Setter Property="Background" 
                     Value="{StaticResource whiteToWheatBrush}"/>

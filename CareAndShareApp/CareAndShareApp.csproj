@@ -118,6 +118,7 @@
     <None Include="CareAndShareApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\arrow-next.png" />
     <Content Include="Assets\big-button.png" />
     <Content Include="Assets\custom-submit.png" />
     <Content Include="Assets\images.jpg" />
