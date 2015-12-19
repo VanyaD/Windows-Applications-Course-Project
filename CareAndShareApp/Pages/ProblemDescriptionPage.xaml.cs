@@ -9,16 +9,12 @@
 
     public sealed partial class ProblemDescriptionPage : Page
     {
-        ObservableCollection<FontFamily> fonts = new ObservableCollection<FontFamily>();
+        //ObservableCollection<CategoryViewModel> categories = new ObservableCollection<CategoryViewModel>();
         LocatorViewModel viewModel;
 
         public ProblemDescriptionPage()
         {
             this.InitializeComponent();
-
-            fonts.Add(new FontFamily("Arial"));
-            fonts.Add(new FontFamily("Courier New"));
-            fonts.Add(new FontFamily("Times New Roman"));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
