@@ -12,14 +12,13 @@
 
     public sealed partial class ProblemDescriptionPage : Page
     {
-        ObservableCollection<FontFamily> fonts = new ObservableCollection<FontFamily>();
+        //ObservableCollection<CategoryViewModel> categories = new ObservableCollection<CategoryViewModel>();
         LocatorViewModel viewModel;
         ParseObject parseObject;
 
         public ProblemDescriptionPage()
         {
             this.InitializeComponent();
-
             parseObject = new ParseObject("Idea");
             fonts.Add(new FontFamily("Arial"));
             fonts.Add(new FontFamily("Courier New"));
