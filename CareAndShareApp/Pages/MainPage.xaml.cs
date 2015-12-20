@@ -29,6 +29,11 @@ namespace CareAndShareApp.Pages
             this.Frame.Navigate(typeof(LocationPage));
         }
 
+        private void AboutTheAppButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.tbAbout.Visibility = Visibility.Visible;
+        }
+
         private void AppBarHomeButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));

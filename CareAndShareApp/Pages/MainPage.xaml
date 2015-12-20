@@ -48,12 +48,56 @@
                 <TextBlock Margin="5,0,0,0" Foreground="black" HorizontalAlignment="Left" VerticalAlignment="Center" >List a Problems</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Grid.Row="2" Style="{StaticResource WhiteToWheatButtonStyle}">
+            <Button Grid.Row="2" 
+                    Click="AboutTheAppButtonClick"
+                    Style="{StaticResource WhiteToWheatButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/assets/tender.png" HorizontalAlignment="Left"/>
-                    <TextBlock Margin="5,0,0,0" Foreground="black" HorizontalAlignment="Stretch" VerticalAlignment="Center">My Pending Submissions</TextBlock>
+                    <TextBlock Margin="5,0,0,0" Foreground="black" HorizontalAlignment="Stretch" VerticalAlignment="Center">About Care&amp;Share</TextBlock>
                 </StackPanel>
             </Button>
+
+            <StackPanel Visibility="Collapsed" x:Name="tbAbout">
+                <TextBlock Grid.Row="2"                
+                TextWrapping="Wrap"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                 Foreground="WhiteSmoke">
+                <Run Text="Welcome to " FontSize="18"></Run>  
+                <Run Text="Care&amp;Share" FontSize="18" FontWeight="Bold" Foreground="Wheat"></Run>
+                <Run Text="!" FontSize="18"></Run>
+                </TextBlock>
+                <TextBlock Grid.Row="2"
+                Visibility="Visible"
+                TextWrapping="Wrap"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                 Foreground="WhiteSmoke">
+                <Run Text="This is the easiest and most convenient way to share a problem or even just an idea for improvement and be sure that it will be transferred to the respective authorities. 
+This application is for everyone who cannot just pass by issues faced while traveling to work. This application is for everyone who cares for the others, cares for his children, cares for the future.
+If you are a person of action, then this application is the one for you!"></Run>
+                </TextBlock>
+
+                <TextBlock Grid.Row="2"
+                Visibility="Visible"
+                TextWrapping="Wrap"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                Foreground="WhiteSmoke">
+                <Run Text="We hope it will be of help to millions of people in their way of turning wishes into reality and making the world a better place to live."></Run>
+                </TextBlock>
+
+                <TextBlock Grid.Row="2"
+                Visibility="Visible"
+                TextWrapping="Wrap"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                Foreground="WhiteSmoke">
+                <Run Text="Enjoy it!"></Run>
+                </TextBlock>
+            </StackPanel>
         </StackPanel>
+        
+        
     </Grid>
 </Page>
