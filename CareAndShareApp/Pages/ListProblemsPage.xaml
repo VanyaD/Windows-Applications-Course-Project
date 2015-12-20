@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="CareAndShareApp.Pages.ListProblemsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CareAndShareApp.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="0.9*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="All Problems" FontSize="25" Foreground="Wheat" HorizontalAlignment="Center"></TextBlock>
+        <ListView Grid.Row="1" ItemsSource="{Binding Problems}" HorizontalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid BorderThickness="1" BorderBrush="WhiteSmoke">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImageSource}" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+                        </Image>
+                        <TextBlock Foreground="Wheat" Text="Country: " 
+                                   Grid.Row="1"
+                                   Grid.Column="0"
+                                   HorizontalAlignment="Stretch"></TextBlock>
+                        <TextBlock Foreground="Wheat" Text="{Binding Country}" 
+                                   Grid.Row="1"
+                                   Grid.Column="1"></TextBlock>
+                        <TextBlock Foreground="Wheat" Text="Town: " 
+                                   Grid.Row="2"
+                                   Grid.Column="0"
+                                   HorizontalAlignment="Stretch"></TextBlock>
+                        <TextBlock Foreground="Wheat" Text="{Binding Town}" 
+                                   Grid.Row="2"
+                                   Grid.Column="1"></TextBlock>
+                        <TextBlock Foreground="Wheat" Text="Address: " 
+                                   Grid.Row="3"
+                                   Grid.Column="0"
+                                   HorizontalAlignment="Stretch"></TextBlock>
+                        <TextBlock Foreground="Wheat" Text="{Binding Address}" 
+                                   Grid.Row="3"
+                                   Grid.Column="1"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

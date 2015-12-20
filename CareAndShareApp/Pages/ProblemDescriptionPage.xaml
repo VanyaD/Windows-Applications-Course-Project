@@ -54,7 +54,8 @@
                     Content="Next" 
                     Grid.Row="2" 
                     Style="{StaticResource GoToNextPage}" 
-                    Visibility="Visible"/>
+                    Visibility="Visible"
+                    Click="Final_Click"/>
         </StackPanel>
     </Grid>
 </Page>

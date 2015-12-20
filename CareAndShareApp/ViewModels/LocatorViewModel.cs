@@ -19,5 +19,11 @@ namespace CareAndShareApp.ViewModels
         public byte Priority { get; set; }
 
         public string Comment { get; set; }
+
+        public string ImagePath { get; set; }
+
+        public object ImageSource { get; set; }
+
+        public string ImageName { get; set; }
     }
 }

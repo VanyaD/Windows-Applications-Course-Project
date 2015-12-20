@@ -1,4 +1,5 @@
 ﻿using CareAndShareApp.ViewModels;
+using Parse;
 using System;
 using System.Collections.Generic;
 using System.IO;

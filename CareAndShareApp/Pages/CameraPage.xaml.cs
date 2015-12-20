@@ -3,6 +3,8 @@
     using CareAndShareApp.ViewModels;
     using System;
     using System.IO;
+    using System.Net.Http;
+    using System.Threading.Tasks;
     using Windows.ApplicationModel.DataTransfer;
     using Windows.Graphics.Imaging;
     using Windows.Media.Capture;
@@ -13,7 +15,8 @@
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Media.Imaging;
     using Windows.UI.Xaml.Navigation;
-
+    using Windows.Foundation.Collections;
+    using Parse;
     public sealed partial class CameraPage : Page
     {
         LocatorViewModel viewModel;
@@ -45,16 +48,21 @@
             IRandomAccessStream stream = await photo.OpenAsync(FileAccessMode.Read);
             BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
             SoftwareBitmap softwareBitmap = await decoder.GetSoftwareBitmapAsync();
-
             SoftwareBitmap softwareBitmapBGR8 = SoftwareBitmap.Convert(softwareBitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
-
             SoftwareBitmapSource bitmapSource = new SoftwareBitmapSource();
             await bitmapSource.SetBitmapAsync(softwareBitmapBGR8);
 
             imageControl.Source = bitmapSource;
             this.GoToProblemDescriptionPage.Visibility = Visibility.Visible;
+
+
+
+            viewModel.ImagePath = photo.Path;
+            viewModel.ImageSource = bitmapSource;
+            viewModel.ImageName = photo.DisplayName;
         }
-        ////
+
+
 
         private void GoToProblemDescriptionPageClick(object sender, RoutedEventArgs e)
         {
