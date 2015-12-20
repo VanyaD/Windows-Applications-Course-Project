@@ -5,6 +5,8 @@
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
+    using System.Reflection;
+    using System.Threading.Tasks;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Media;
@@ -20,9 +22,9 @@
         {
             this.InitializeComponent();
             parseObject = new ParseObject("Idea");
-            fonts.Add(new FontFamily("Arial"));
-            fonts.Add(new FontFamily("Courier New"));
-            fonts.Add(new FontFamily("Times New Roman"));
+            //fonts.Add(new FontFamily("Arial"));
+            //fonts.Add(new FontFamily("Courier New"));
+            //fonts.Add(new FontFamily("Times New Roman"));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -42,10 +44,30 @@
 
         private async void Final_Click(object sender, RoutedEventArgs e)
         {
+            if (!IsFieldFilled())
+            {
+                this.SubmitIdeaButton.Visibility = Visibility.Collapsed;
+                this.ErrorPanel.Visibility = Visibility.Visible;
+                await Task.Delay(3000);
+                this.ErrorPanel.Visibility = Visibility.Collapsed;
+                this.SubmitIdeaButton.Visibility = Visibility.Visible;
+                return;
+            }
+
+            viewModel.Priority = (byte)this.sliderPriority.Value;
+            viewModel.Title = this.tbTitle.Text;
+            viewModel.Category = this.tbCategory.SelectionBoxItem.ToString(); //default null
+            viewModel.Comment = this.tbDescription.Text;
+
             parseObject["Country"] = viewModel.Country;
             parseObject["Town"] = viewModel.Town;
             parseObject["Address"] = viewModel.Address;
             parseObject["Neighborhood"] = viewModel.Neighborhood;
+            parseObject["Title"] = viewModel.Title;
+            parseObject["Comment"] = viewModel.Comment;
+            parseObject["Category"] = viewModel.Category;
+            parseObject["Priority"] = viewModel.Priority;
+
             byte[] data = File.ReadAllBytes(viewModel.ImagePath);
 
             var newImageName = GenerateStringFromDate(DateTime.Now);
@@ -54,7 +76,29 @@
             ParseFile file = new ParseFile(newImageName, data);
             await file.SaveAsync();
             parseObject["Image"] = file;
+
             await parseObject.SaveAsync();
+            SuccessfullIdea();
+        }
+
+        private bool IsFieldFilled()
+        {
+            if ((byte)this.sliderPriority.Value != 0 && this.tbTitle.Text != string.Empty && this.tbCategory.SelectionBoxItem != null
+                && this.tbDescription.Text != string.Empty)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private async void SuccessfullIdea()
+        {
+            this.SubmitIdeaButton.Visibility = Visibility.Collapsed;
+            this.SuccessPanel.Visibility = Visibility.Visible;
+            await Task.Delay(5000);
+            this.SuccessPanel.Visibility = Visibility.Collapsed;
+            this.SubmitIdeaButton.Visibility = Visibility.Visible;
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }

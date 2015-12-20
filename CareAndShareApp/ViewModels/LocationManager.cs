@@ -13,11 +13,6 @@ namespace CareAndShareApp.ViewModels
         {
             var accessStatus = await Geolocator.RequestAccessAsync();
 
-            if (accessStatus != GeolocationAccessStatus.Allowed)
-            {
-                throw new Exception();
-            }
-
             var geolocator = new Geolocator { DesiredAccuracyInMeters = 0 };
 
             var position = await geolocator.GetGeopositionAsync();

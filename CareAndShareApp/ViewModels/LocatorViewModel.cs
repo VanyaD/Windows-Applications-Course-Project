@@ -10,6 +10,10 @@ namespace CareAndShareApp.ViewModels
     {
         public string Country { get; set; }
 
+        public string Title { get; set; }
+
+        public string Category { get; set; }
+
         public string Town { get; set; }
 
         public string Address { get; set; }

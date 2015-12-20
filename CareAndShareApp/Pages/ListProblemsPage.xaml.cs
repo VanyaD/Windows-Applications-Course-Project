@@ -18,7 +18,7 @@
         public async void getObjectsFromDb()
         {
             var lists = new ViewModel();
-            ParseQuery<ParseObject> query = ParseObject.GetQuery("Idea");
+            ParseQuery<ParseObject> query = ParseObject.GetQuery("Idea").OrderByDescending("Priority");
             IEnumerable<ParseObject> ideas = await query.FindAsync();
 
             var ideasList = new List<LocatorViewModel>();
@@ -27,10 +27,14 @@
             {
                 var locModel = new LocatorViewModel();
 
-                string country = idea.Get<string>("Country");
-                string town = idea.Get<string>("Town");
-                string address = idea.Get<string>("Address");
-                string nb = idea.Get<string>("Neighborhood");
+                var country = idea.Get<string>("Country");
+                var town = idea.Get<string>("Town");
+                var address = idea.Get<string>("Address");
+                var nb = idea.Get<string>("Neighborhood");
+                var description = idea.Get<string>("Comment");
+                var title = idea.Get<string>("Title");
+                var priority = idea.Get<byte>("Priority");
+                var category = idea.Get<string>("Category");
                 ParseFile img = idea.Get<ParseFile>("Image");
 
                 locModel.Country = country;
@@ -38,6 +42,10 @@
                 locModel.Address = address;
                 locModel.Neighborhood = nb;
                 locModel.ImageSource = img.Url;
+                locModel.Title = title;
+                locModel.Priority = priority;
+                locModel.Comment = description;
+                locModel.Category = category;
 
                 ideasList.Add(locModel);
             }
