@@ -14,7 +14,6 @@
 
     public sealed partial class ProblemDescriptionPage : Page
     {
-        //ObservableCollection<CategoryViewModel> categories = new ObservableCollection<CategoryViewModel>();
         LocatorViewModel viewModel;
         ParseObject parseObject;
 
@@ -22,9 +21,6 @@
         {
             this.InitializeComponent();
             parseObject = new ParseObject("Idea");
-            //fonts.Add(new FontFamily("Arial"));
-            //fonts.Add(new FontFamily("Courier New"));
-            //fonts.Add(new FontFamily("Times New Roman"));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
