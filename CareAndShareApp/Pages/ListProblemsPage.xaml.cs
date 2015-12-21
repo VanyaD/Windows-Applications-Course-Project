@@ -5,6 +5,7 @@
     using System.Diagnostics;
     using System.Threading.Tasks;
     using ViewModels;
+    using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
 
     public sealed partial class ListProblemsPage : Page
@@ -13,6 +14,11 @@
         {
             this.InitializeComponent();
             getObjectsFromDb();
+        }
+
+        private void AppBarHomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
 
         public async void getObjectsFromDb()

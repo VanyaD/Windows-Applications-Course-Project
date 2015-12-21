@@ -15,12 +15,34 @@
             <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
             <Setter Property="TextWrapping" Value="Wrap"></Setter>
         </Style>
+
+        <Flyout x:Key="SharedFlyout">
+            <StackPanel  Width="200">
+                <TextBlock                         
+                     FontSize="12" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold" Visibility="Visible" Text="How to submit an idea? ">
+                    <!--<Run Text="How to submit an idea? "></Run>
+                    <Run ></Run>
+                    <Run ></Run>
+                    <Run Text="" ></Run>
+                    <Run Text="" ></Run>
+                    <Run Text=""></Run>
+                    <Run Text=""  ></Run>-->
+                </TextBlock>
+                <TextBlock Text="Follow these steps: " FontSize="12" TextWrapping="Wrap" Foreground="Black" Visibility="Visible"></TextBlock>
+                <TextBlock Text="1.	Identify the problem  " FontSize="12" TextWrapping="Wrap" Foreground="Black" Visibility="Visible"></TextBlock>
+                <TextBlock Text="2.	Detect the location of the problem   " FontSize="12" TextWrapping="Wrap" Foreground="Black" Visibility="Visible"></TextBlock>
+                <TextBlock Text="3.	Capture the problem  " FontSize="12" TextWrapping="Wrap" Foreground="Black" Visibility="Visible"></TextBlock>
+                <TextBlock Text="4.	Describe the problem  " FontSize="12" TextWrapping="Wrap" Foreground="Black" Visibility="Visible"></TextBlock>
+                <TextBlock Text="5.	Submit the problem" FontSize="12" TextWrapping="Wrap" Foreground="Black" Visibility="Visible"></TextBlock>
+            </StackPanel>
+        </Flyout>
     </Page.Resources>
 
     <Page.TopAppBar >
         <CommandBar ClosedDisplayMode="Minimal">
             <AppBarToggleButton Icon="Home" Label="Home" Click="AppBarHomeButton_Click"/>
-            <AppBarToggleButton Icon="Help" Label="About"/>
+            <AppBarButton Icon="Help" Label="Help" Flyout="{StaticResource SharedFlyout}" FlyoutBase.AttachedFlyout="{StaticResource SharedFlyout}"/>
+
         </CommandBar>
     </Page.TopAppBar>
 
