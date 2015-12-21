@@ -16,6 +16,11 @@
             getObjectsFromDb();
         }
 
+        private void AppBarHomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
         public async void getObjectsFromDb()
         {
             var lists = new ViewModel();
