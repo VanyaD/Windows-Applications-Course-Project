@@ -44,8 +44,8 @@
             </Button>
             <Button Grid.Row="2" Click="ListProblemsClick"  Style="{StaticResource WhiteToWheatButtonStyle}">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <Image Source="/assets/web_hi_res_512.png" HorizontalAlignment="Left"></Image>
-                <TextBlock Margin="5,0,0,0" Foreground="black" HorizontalAlignment="Left" VerticalAlignment="Center" >List a Problems</TextBlock>
+                    <Image Source="/assets/web_hi_res_512.png" HorizontalAlignment="Left"></Image>
+                    <TextBlock Margin="5,0,0,0" Foreground="black" HorizontalAlignment="Left" VerticalAlignment="Center" >List a Problems</TextBlock>
                 </StackPanel>
             </Button>
             <Button Grid.Row="2" 
@@ -70,7 +70,7 @@
                 <TextBlock Grid.Row="2"
                 Visibility="Visible"
                 TextWrapping="Wrap"
-                Margin="10"
+                Margin="2"
                 HorizontalAlignment="Stretch"
                  Foreground="WhiteSmoke">
                 <Run Text="This is the easiest and most convenient way to share a problem or even just an idea for improvement and be sure that it will be transferred to the respective authorities. 
@@ -81,7 +81,7 @@ If you are a person of action, then this application is the one for you!"></Run>
                 <TextBlock Grid.Row="2"
                 Visibility="Visible"
                 TextWrapping="Wrap"
-                Margin="10"
+                Margin="2"
                 HorizontalAlignment="Stretch"
                 Foreground="WhiteSmoke">
                 <Run Text="We hope it will be of help to millions of people in their way of turning wishes into reality and making the world a better place to live."></Run>
@@ -90,14 +90,12 @@ If you are a person of action, then this application is the one for you!"></Run>
                 <TextBlock Grid.Row="2"
                 Visibility="Visible"
                 TextWrapping="Wrap"
-                Margin="10"
+                Margin="2"
                 HorizontalAlignment="Stretch"
                 Foreground="WhiteSmoke">
                 <Run Text="Enjoy it!"></Run>
                 </TextBlock>
             </StackPanel>
         </StackPanel>
-        
-        
     </Grid>
 </Page>

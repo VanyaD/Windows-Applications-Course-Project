@@ -35,8 +35,6 @@ namespace CareAndShareApp.Pages
         {
             this.LocationProgressBar.Visibility = Visibility.Visible;
             var position = await LocationManager.GetPosition();
-            //this.tbLatitude.Text = position.Coordinate.Latitude.ToString();
-            //this.tbLongitude.Text = position.Coordinate.Longitude.ToString();
             ReverseGeocode(position.Coordinate.Latitude, position.Coordinate.Longitude);
         }
 

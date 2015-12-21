@@ -31,7 +31,14 @@ namespace CareAndShareApp.Pages
 
         private void AboutTheAppButtonClick(object sender, RoutedEventArgs e)
         {
-            this.tbAbout.Visibility = Visibility.Visible;
+            if (this.tbAbout.Visibility == Visibility.Visible)
+            {
+                this.tbAbout.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                this.tbAbout.Visibility = Visibility.Visible;
+            }
         }
 
         private void AppBarHomeButton_Click(object sender, RoutedEventArgs e)
