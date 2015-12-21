@@ -7,27 +7,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-<<<<<<< HEAD
-    <Page.TopAppBar >
+    <Page.TopAppBar>
         <CommandBar ClosedDisplayMode="Minimal">
             <AppBarToggleButton Icon="Home" Label="Home" Click="AppBarHomeButton_Click"/>
             <AppBarToggleButton Icon="Help" Label="About"/>
         </CommandBar>
     </Page.TopAppBar>
 
-=======
     <Page.Resources>
         <Flyout x:Key="SharedFlyout">
             <StackPanel  Width="200">
                 <TextBlock                         
                      FontSize="12" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold" Visibility="Visible" Text="How to submit an idea? ">
-                    <!--<Run Text="How to submit an idea? "></Run>
-                    <Run ></Run>
-                    <Run ></Run>
-                    <Run Text="" ></Run>
-                    <Run Text="" ></Run>
-                    <Run Text=""></Run>
-                    <Run Text=""  ></Run>-->
                 </TextBlock>
                 <TextBlock Text="Follow these steps: " FontSize="12" TextWrapping="Wrap" Foreground="Black" Visibility="Visible"></TextBlock>
                 <TextBlock Text="1.	Identify the problem  " FontSize="12" TextWrapping="Wrap" Foreground="Black" Visibility="Visible"></TextBlock>
@@ -38,16 +29,7 @@
             </StackPanel>
         </Flyout>
     </Page.Resources>
-
-    <Page.TopAppBar >
-        <CommandBar ClosedDisplayMode="Minimal">
-            <AppBarToggleButton Icon="Home" Label="Home" Click="AppBarHomeButton_Click"/>
-            <AppBarButton Icon="Help" Label="Help" Flyout="{StaticResource SharedFlyout}" FlyoutBase.AttachedFlyout="{StaticResource SharedFlyout}"/>
-
-        </CommandBar>
-    </Page.TopAppBar>
     
->>>>>>> origin/master
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"></RowDefinition>

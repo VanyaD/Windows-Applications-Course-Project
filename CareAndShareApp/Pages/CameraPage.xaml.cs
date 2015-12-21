@@ -35,15 +35,7 @@
         {
             CameraCaptureUI captureUI = new CameraCaptureUI();
             captureUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Jpeg;
-            //captureUI.PhotoSettings.CroppedSizeInPixels = new Size(300, 300);
-
             StorageFile photo = await captureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
-
-            if (photo == null)
-            {
-                // User cancelled photo capture
-                return;
-            }
 
             IRandomAccessStream stream = await photo.OpenAsync(FileAccessMode.Read);
             BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
@@ -55,14 +47,10 @@
             imageControl.Source = bitmapSource;
             this.GoToProblemDescriptionPage.Visibility = Visibility.Visible;
 
-
-
             viewModel.ImagePath = photo.Path;
             viewModel.ImageSource = bitmapSource;
             viewModel.ImageName = photo.DisplayName;
         }
-
-
 
         private void GoToProblemDescriptionPageClick(object sender, RoutedEventArgs e)
         {
