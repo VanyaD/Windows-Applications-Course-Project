@@ -3,13 +3,10 @@
     using CareAndShareApp.ViewModels;
     using Parse;
     using System;
-    using System.Collections.ObjectModel;
     using System.IO;
-    using System.Reflection;
     using System.Threading.Tasks;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Media;
     using Windows.UI.Xaml.Navigation;
 
     public sealed partial class ProblemDescriptionPage : Page
@@ -40,13 +37,9 @@
 
         private async void Final_Click(object sender, RoutedEventArgs e)
         {
-            if (!IsFieldFilled())
+            if (!IsFieldsFilled())
             {
-                this.SubmitIdeaButton.Visibility = Visibility.Collapsed;
-                this.ErrorPanel.Visibility = Visibility.Visible;
-                await Task.Delay(3000);
-                this.ErrorPanel.Visibility = Visibility.Collapsed;
-                this.SubmitIdeaButton.Visibility = Visibility.Visible;
+                UnSuccessfulIdea();
                 return;
             }
 
@@ -63,7 +56,7 @@
             parseObject["Comment"] = viewModel.Comment;
             parseObject["Category"] = viewModel.Category;
             parseObject["Priority"] = viewModel.Priority;
-
+            viewModel.ImagePath = viewModel.ImagePath;
             byte[] data = File.ReadAllBytes(viewModel.ImagePath);
 
             var newImageName = GenerateStringFromDate(DateTime.Now);
@@ -74,12 +67,14 @@
             parseObject["Image"] = file;
 
             await parseObject.SaveAsync();
-            SuccessfullIdea();
+            SuccessfulIdea();
         }
 
-        private bool IsFieldFilled()
+        private bool IsFieldsFilled()
         {
-            if ((byte)this.sliderPriority.Value != 0 && this.tbTitle.Text != string.Empty && this.tbCategory.SelectionBoxItem != null
+            if ((byte)this.sliderPriority.Value != 0 && 
+                this.tbTitle.Text != string.Empty &&
+                this.tbCategory.SelectionBoxItem != null
                 && this.tbDescription.Text != string.Empty)
             {
                 return true;
@@ -87,14 +82,24 @@
             return false;
         }
 
-        private async void SuccessfullIdea()
+        private async void SuccessfulIdea()
         {
             this.SubmitIdeaButton.Visibility = Visibility.Collapsed;
             this.SuccessPanel.Visibility = Visibility.Visible;
-            await Task.Delay(5000);
+            await Task.Delay(3000);
             this.SuccessPanel.Visibility = Visibility.Collapsed;
             this.SubmitIdeaButton.Visibility = Visibility.Visible;
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private async void UnSuccessfulIdea()
+        {
+            this.SubmitIdeaButton.Visibility = Visibility.Collapsed;
+            this.ErrorPanel.Visibility = Visibility.Visible;
+            await Task.Delay(3000);
+            this.ErrorPanel.Visibility = Visibility.Collapsed;
+            this.SubmitIdeaButton.Visibility = Visibility.Visible;
+            return;
         }
     }
 }

@@ -2,21 +2,15 @@
 {
     using CareAndShareApp.ViewModels;
     using System;
-    using System.IO;
-    using System.Net.Http;
-    using System.Threading.Tasks;
-    using Windows.ApplicationModel.DataTransfer;
     using Windows.Graphics.Imaging;
     using Windows.Media.Capture;
     using Windows.Storage;
-    using Windows.Storage.Pickers;
     using Windows.Storage.Streams;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Media.Imaging;
     using Windows.UI.Xaml.Navigation;
-    using Windows.Foundation.Collections;
-    using Parse;
+
     public sealed partial class CameraPage : Page
     {
         LocatorViewModel viewModel;

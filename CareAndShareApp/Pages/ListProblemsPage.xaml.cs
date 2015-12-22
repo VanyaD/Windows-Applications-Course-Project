@@ -2,8 +2,6 @@
 {
     using Parse;
     using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Threading.Tasks;
     using ViewModels;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;

@@ -39,10 +39,10 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Text="All Problems" FontSize="25" Foreground="Wheat" HorizontalAlignment="Center"></TextBlock>
-        <ListView Grid.Row="1" ItemsSource="{Binding Problems}">
+        <ListView Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" ItemsSource="{Binding Problems}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid BorderThickness="1" BorderBrush="WhiteSmoke"  HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                    <Grid HorizontalAlignment="Stretch" Width="400" BorderThickness="1" BorderBrush="WhiteSmoke"  Margin="0,0,0,10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="200"/>
                             <RowDefinition/>
@@ -59,55 +59,57 @@
                         </Grid.ColumnDefinitions>
                         <Image Source="{Binding ImageSource}" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
                         </Image>
-                        <TextBlock Foreground="Wheat" Text="Title: " 
+                        <TextBlock Foreground="Wheat" Text="Problem title: " 
                                    Grid.Row="1"
                                    Grid.Column="0"
                                    HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="{Binding Title}" 
                                    Grid.Row="1"
-                                   Grid.Column="1"></TextBlock>
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Stretch"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="Country: " 
                                    Grid.Row="2"
-                                   Grid.Column="0"
+                                   Grid.Column="0" 
                                   HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="{Binding Country}" 
-                                   Grid.Row="2"
+                                   Grid.Row="2" HorizontalAlignment="Stretch"
                                    Grid.Column="1"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="Town: " 
                                    Grid.Row="3"
                                    Grid.Column="0"
                                    HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="{Binding Town}" 
-                                   Grid.Row="3"
+                                   Grid.Row="3" HorizontalAlignment="Stretch"
                                    Grid.Column="1"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="Address: " 
                                    Grid.Row="4"
-                                   Grid.Column="0"
+                                   Grid.Column="0"                                   
                                    HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="{Binding Address}" 
                                    Grid.Row="4"
-                                   Grid.Column="1"></TextBlock>
+                                   Grid.Column="1" HorizontalAlignment="Stretch"
+                                   TextWrapping="Wrap"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="Category: " 
                                    Grid.Row="5"
                                    Grid.Column="0"
                                    HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="{Binding Category}" 
-                                   Grid.Row="5"
+                                   Grid.Row="5" HorizontalAlignment="Stretch"
                                    Grid.Column="1"></TextBlock>
-                        <TextBlock Foreground="Wheat" Text="Description: " 
+                        <TextBlock Foreground="Wheat" Text="Idea: " 
                                    Grid.Row="6"
                                    Grid.Column="0"
                                    HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="{Binding Comment}" 
                                    TextWrapping="Wrap"
-                                   Grid.Row="6"
+                                   Grid.Row="6" HorizontalAlignment="Stretch"
                                    Grid.Column="1"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="Priority: " 
                                    Grid.Row="7"
-                                   Grid.Column="0"
+                                   Grid.Column="0" 
                                    HorizontalAlignment="Left"></TextBlock>
                         <TextBlock Foreground="Wheat" Text="{Binding Priority}" 
-                                   Grid.Row="7"
+                                   Grid.Row="7" HorizontalAlignment="Stretch"
                                    Grid.Column="1"></TextBlock>
                     </Grid>
                 </DataTemplate>

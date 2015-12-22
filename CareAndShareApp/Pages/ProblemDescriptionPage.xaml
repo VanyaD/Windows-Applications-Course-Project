@@ -87,7 +87,7 @@
                      TextWrapping="Wrap"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"
                      Height="100"
-                     PlaceholderText="Describe the problem" 
+                     PlaceholderText="Describe the problem and you idea" 
                      Grid.Row="2"
                      Margin="10"/>
             <ComboBox Name="tbCategory"
